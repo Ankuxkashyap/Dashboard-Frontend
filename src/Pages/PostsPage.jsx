@@ -31,7 +31,7 @@ const PostsPage = () => {
         status: form.status,
       };
 
-      const res = await axios.post("/post/createPost", postData);
+      const res = await axios.post("/post/createPost", postData,{ withCredentials: true });
 
       if (res.status === 201) {
         toast.success("Post created successfully ✅");

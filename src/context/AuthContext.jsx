@@ -22,12 +22,12 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (data) => {
-    const res = await api.post("/users/login", data);
+    const res = await api.post("/users/login", data,{ withCredentials: true });
     setUser(res.data.user);
   };
 
   const register = async (data) => {
-    const res = await api.post("/users/register", data);
+    const res = await api.post("/users/register", data, { withCredentials: true });
     setUser(res.data.user);
   };
 

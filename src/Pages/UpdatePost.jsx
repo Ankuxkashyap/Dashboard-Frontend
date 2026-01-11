@@ -19,7 +19,7 @@ const UpdatePost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`/post/getPostById/${id}`);
+        const res = await axios.get(`/post/getPostById/${id}` ,{ withCredentials: true });
         const post = res.data.post;
 
         setForm({
